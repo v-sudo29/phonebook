@@ -16,7 +16,7 @@ const unknownEndpoint = (request, response) => {
 
 app.use(express.json())
 app.use(requestLogger)
-app.use(morgan.token('type', function (req, res) { return req.headers['content-type'] }))
+app.use(morgan('tiny'))
 
 let persons = [
   {
@@ -38,12 +38,17 @@ let persons = [
     "id": 4,
     "name": "Armin Arlelt",
     "number": "040-123-4567"
+  },
+  {
+    "id": 5,
+    "name": "Conny Springer",
+    "number": "040-123-4567"
   }
 ]
 
 // GET requests
 app.get('/', (request, response) => {
-  response.send('<h1>Default Text</h1>')
+  response.send(console.log('success!'))
 })
 
 app.get('/api/persons', (request, response) => {
