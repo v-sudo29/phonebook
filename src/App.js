@@ -5,9 +5,7 @@ function App() {
   const [backendData, setBackendData] = useState([{}])
 
   useEffect(() => {
-    fetch("https://render-test-skhh.onrender.com/api/persons", {
-      mode: 'no-cors'
-    }).then(
+    fetch("https://render-test-skhh.onrender.com/api/persons").then(
       response => response.json()
     ).then(
       data => {
