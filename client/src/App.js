@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
 
-      {(typeof backendData === undefined) 
+      {(typeof backendData === "undefined") 
         ? <h1>Loading...</h1>
         : backendData.map((person, id) => {
           return (
